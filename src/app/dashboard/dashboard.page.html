@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar showCancelButton="never" debounce="500" (ionChange)="searchlist($event)"></ion-searchbar>
+  <ion-row style="text-align: center;" *ngFor="let data of resp">
+    <ion-col>
+      <ion-item-sliding>
+        <ion-item-options side="start">
+          <ion-item-option (click)="favorite(item)"><ion-icon slot="icon-only" name="create"></ion-icon></ion-item-option>          
+        </ion-item-options>
+
+        <ion-item lines="none">
+           
+          <ion-thumbnail slot="start">           
+            <img src="assets/images/initiated_admission.png" *ngIf="data.status_text == 'Initiated'">
+            <img src="assets/images/accepted_admission.png" *ngIf="data.status_text == 'Accepted'">
+            <img src="assets/images/patient_arrived.png" *ngIf="data.status_text == 'Patient Arrived'">
+            <img src="assets/images/patient_discharged.png" *ngIf="data.status_text == 'Discharged'">
+            <p>{{data?.status}}</p>
+          </ion-thumbnail>
+          <ion-label color="primary">              
+            <p>
+                {{data?.transaction_number}}
+            </p>
+            <p>
+                {{data?.patient_first_name}}
+            </p>
+            <p>
+                {{data?.patient_last_name}}
+            </p>
+            <p>
+                {{data?.patient_gender}}
+            </p>
+
+          </ion-label>
+
+        </ion-item>
+
+        <ion-item-options side="end">
+            <ion-item-option [routerLink]="['/details/'+data.transaction_number]">                
+                <ion-icon slot="icon-only" name="eye" ></ion-icon>
+              </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-col>
+  </ion-row>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/transfer']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

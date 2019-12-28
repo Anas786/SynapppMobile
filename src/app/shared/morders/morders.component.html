@@ -1,0 +1,89 @@
+<ion-row class="ion-justify-content-center" *ngIf="mode == 'edit'">
+  <h4>
+    Medication Orders
+  </h4>
+  <hr>
+  <ion-col size="12">
+    <ion-label>Diet</ion-label>
+    <ion-item>          
+        <ion-select value="brown" interface="action-sheet">
+          <ion-select-option value="brown">Brown</ion-select-option>
+          <ion-select-option value="blonde">Blonde</ion-select-option>
+          <ion-select-option value="black">Black</ion-select-option>
+          <ion-select-option value="red">Red</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+  </ion-col>
+  <ion-col size="12">
+    <ion-label>IV Fluids</ion-label>
+    <ion-item>          
+        <ion-select value="brown" interface="action-sheet">
+          <ion-select-option value="brown">Brown</ion-select-option>
+          <ion-select-option value="blonde">Blonde</ion-select-option>
+          <ion-select-option value="black">Black</ion-select-option>
+          <ion-select-option value="red">Red</ion-select-option>
+        </ion-select>
+      </ion-item>
+  </ion-col>
+  <ion-col size="12">
+    <ion-label>Order Medications</ion-label>
+    <ion-list>
+      <ion-item>
+        <ion-label>Resume All Home Medications</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-col>
+  <ion-col size="12">
+    <ion-label>PRN Meds</ion-label>
+
+  </ion-col>
+  <ion-col size="12">
+    <ion-label>Other PRN Meds</ion-label>
+    <ion-item>
+      <ion-input clearInput></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col size="12">
+    <ion-label>Other Scheduled Meds</ion-label>
+    <ion-item>
+      <ion-input clearInput></ion-input>
+    </ion-item>
+  </ion-col>
+</ion-row>
+
+
+<div *ngIf="mode == 'view'">
+    <ion-card>
+      <ion-card-header>      
+        <ion-card-title>Medication Orders</ion-card-title>
+      </ion-card-header>  
+      <ion-card-content>
+       <ion-row>
+         <ion-col size="6">Diet:</ion-col>
+         <ion-col size="6">{{details?.medication_orders?.Diet}}</ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col size="6">IV_Fluids:</ion-col>
+        <ion-col size="6">{{details?.medication_orders?.IV_Fluids}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Other_PRN_Meds:</ion-col>
+        <ion-col size="6">{{details?.medication_orders?.Other_PRN_Meds}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Other_Scheduled_Meds:</ion-col>
+        <ion-col size="6">{{details?.medication_orders?.Other_Scheduled_Meds}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">PRN_Meds:</ion-col>
+        <ion-col size="6">{{details?.medication_orders?.PRN_Meds}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Resume_All_Home_Medications:</ion-col>
+        <ion-col size="6">{{details?.medication_orders?.Resume_All_Home_Medications}}</ion-col>
+      </ion-row>
+      </ion-card-content>
+    </ion-card>    
+  </div>

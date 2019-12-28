@@ -1,0 +1,29 @@
+ion-segment-button ion-label{
+    font-size: 10px;
+    margin: 0px;
+}
+ion-segment{
+    background: #3880ff;
+    padding-left: 18%;
+}
+.header-md:after{
+    background-image: none;
+}
+ion-segment-button{
+    color: white !important;
+}
+.sc-ion-segment-md-h.ion-color.sc-ion-segment-md-s > .segment-button-checked{
+    --indicator-color-checked: yellow;
+}
+ion-row{
+    padding: 10px;
+    color: black;
+}
+
+hr{
+    width: 100%;
+    background: #dedede;
+}
+ion-datetime{
+    padding-left:0px;
+}

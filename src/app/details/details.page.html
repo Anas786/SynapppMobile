@@ -1,0 +1,104 @@
+<ion-header>
+        <ion-toolbar color="primary">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title>Details</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content>
+        <ion-segment color="secondary" scrollable (ionChange)="segmentChanged($event)">
+          <ion-segment-button [checked]="tab == 'home'" value="home">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>General Info</ion-label>
+          </ion-segment-button>
+          <ion-segment-button [checked]="tab == 'insurance'" value="insurance">
+            <ion-icon name="medical"></ion-icon>
+            <ion-label>Insurance</ion-label>
+          </ion-segment-button>
+          <ion-segment-button [checked]="tab == 'history'" value="history">
+            <ion-icon name="clipboard"></ion-icon>
+            <ion-label>Medical History</ion-label>
+          </ion-segment-button>
+          <ion-segment-button [checked]="tab == 'morders'" value="morders">
+            <ion-icon name="medkit"></ion-icon>
+            <ion-label>Medication Orders</ion-label>
+          </ion-segment-button>
+          <ion-segment-button [checked]="tab == 'dorders'" value="dorders">
+            <ion-icon name="male"></ion-icon>
+            <ion-label>Diagnostic Orders</ion-label>
+          </ion-segment-button>
+          <ion-segment-button [checked]="tab == 'consult'" value="consult">
+            <ion-icon name="male"></ion-icon>
+            <ion-label>Specialty Consult</ion-label>
+          </ion-segment-button>
+          <ion-segment-button [checked]="tab == 'referredBy'" value="referredBy">
+              <ion-icon name="male"></ion-icon>
+              <ion-label>Referred By</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+        
+        <div *ngIf="tab == 'home'">
+          <app-general-info [mode]="mode" [details]="details"></app-general-info>  
+        </div>
+        <div *ngIf="tab == 'insurance'">
+            <app-insurance [mode]="mode" [details]="details"></app-insurance>  
+        </div>
+        <div *ngIf="tab == 'history'">
+            <app-history [mode]="mode" [details]="details"></app-history>  
+        </div>
+        <div *ngIf="tab == 'morders'">
+            <app-morders [mode]="mode" [details]="details"></app-morders>  
+        </div>
+        <div *ngIf="tab == 'dorders'">
+            <app-dorders [mode]="mode"[details]="details"></app-dorders>  
+        </div>
+        <div *ngIf="tab == 'consult'">
+            <app-consult [mode]="mode" [details]="details"></app-consult>  
+        </div>
+        <div *ngIf="tab == 'referredBy' && mode == 'view'">
+            <ion-card>
+                <ion-card-header>      
+                  <ion-card-title>Referring Physician Info</ion-card-title>
+                </ion-card-header>  
+                <ion-card-content>
+                 <ion-row>
+                   <ion-col size="6">Name:</ion-col>
+                   <ion-col size="6">{{details?.clinician_name}}</ion-col>
+                 </ion-row>
+                 <ion-row>
+                  <ion-col size="6">Cell:</ion-col>
+                  <ion-col size="6">{{details?.clinician_cell}}</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col size="6">Email:</ion-col>
+                  <ion-col size="6">{{details?.clinician_email}}</ion-col>
+                </ion-row>             
+                </ion-card-content>
+              </ion-card>   
+              <ion-card>
+                  <ion-card-header>      
+                    <ion-card-title>Referring Facility Info</ion-card-title>
+                  </ion-card-header>  
+                  <ion-card-content>
+                   <ion-row>
+                     <ion-col size="6">Name:</ion-col>
+                     <ion-col size="6">{{details?.sent_by_facility?.name}}</ion-col>
+                   </ion-row>
+                   <ion-row>
+                    <ion-col size="6">Address:</ion-col>
+                    <ion-col size="6">{{details?.sent_by_facility?.address1}}</ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="6">Cell:</ion-col>
+                    <ion-col size="6">{{details?.sent_by_facility?.phone}}</ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="6">Email:</ion-col>
+                    <ion-col size="6">{{details?.sent_by_facility?.email}}</ion-col>
+                  </ion-row>
+                  </ion-card-content>
+                </ion-card>   
+        </div>
+      </ion-content>

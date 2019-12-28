@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Transfer Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment color="secondary" scrollable (ionChange)="segmentChanged($event)">
+    <ion-segment-button [checked]="tab == 'home'" value="home">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>General Info</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [checked]="tab == 'insurance'" value="insurance">
+      <ion-icon name="medical"></ion-icon>
+      <ion-label>Insurance</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [checked]="tab == 'history'" value="history">
+      <ion-icon name="clipboard"></ion-icon>
+      <ion-label>Medical History</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [checked]="tab == 'morders'" value="morders">
+      <ion-icon name="medkit"></ion-icon>
+      <ion-label>Medication Orders</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [checked]="tab == 'dorders'" value="dorders">
+      <ion-icon name="male"></ion-icon>
+      <ion-label>Diagnostic Orders</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [checked]="tab == 'consult'" value="consult">
+      <ion-icon name="male"></ion-icon>
+      <ion-label>Specialty Consult</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+ 
+  <div *ngIf="tab == 'home'">
+    <app-general-info [mode]="'edit'"></app-general-info>  
+  </div>
+  <div *ngIf="tab == 'insurance'">
+      <app-insurance [mode]="'edit'"></app-insurance>  
+  </div>
+  <div *ngIf="tab == 'history'">
+      <app-history [mode]="'edit'"></app-history>  
+  </div>
+  <div *ngIf="tab == 'morders'">
+      <app-morders [mode]="'edit'"></app-morders>  
+  </div>
+  <div *ngIf="tab == 'dorders'">
+      <app-dorders [mode]="'edit'"></app-dorders>  
+  </div>
+  <div *ngIf="tab == 'consult'">
+      <app-consult [mode]="'edit'"></app-consult>  
+  </div>
+
+</ion-content>

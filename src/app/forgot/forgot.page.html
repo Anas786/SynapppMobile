@@ -1,0 +1,30 @@
+<ion-content>
+    <ion-row class="ion-align-items-center sign-in-image">
+      <ion-col size="12">
+        <h1>Forgot Password?
+          <hr>
+        </h1>
+      </ion-col>
+  
+      <ion-col size="12">
+        <ion-img src="assets/images/logo.png"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item-divider>
+            <ion-icon name="mail"></ion-icon>
+          <ion-input clearInput value="" placeholder="Enter Email"></ion-input>
+        </ion-item-divider>
+      </ion-col>
+    </ion-row>
+  <ion-row style="text-align: center;">
+      <ion-col>
+        <ion-button color="danger" [routerLink]="['/change-password']">
+          <ion-ripple-effect></ion-ripple-effect>Send Email
+        </ion-button>
+      </ion-col>
+    </ion-row>  
+  
+  
+  </ion-content>

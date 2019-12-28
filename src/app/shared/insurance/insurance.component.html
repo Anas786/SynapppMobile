@@ -1,0 +1,83 @@
+<ion-row  class="ion-justify-content-center" *ngIf="mode == 'edit'">    
+<h4>
+    Insurance Information
+  </h4>
+  <hr>
+  <ion-col size="12">
+    <ion-label>Insurance</ion-label>
+    <ion-item>          
+        <ion-select value="brown" interface="action-sheet">
+          <ion-select-option value="brown">Brown</ion-select-option>
+          <ion-select-option value="blonde">Blonde</ion-select-option>
+          <ion-select-option value="black">Black</ion-select-option>
+          <ion-select-option value="red">Red</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+  </ion-col>
+  <ion-col size="12">
+    <ion-label>Card Holder's Name</ion-label>
+    <ion-item>
+        <ion-input clearInput placeholder="First Name"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-input clearInput placeholder="Last Name"></ion-input>
+        </ion-item> 
+  </ion-col>
+  <ion-col size="12">
+    <ion-label>Primary Card Holder's SSN</ion-label>
+    <ion-item>
+      <ion-input clearInput ></ion-input>
+    </ion-item>
+
+  </ion-col> 
+  <ion-col size="12">
+      <ion-label>Patient Member ID</ion-label>
+      <ion-item>
+        <ion-input clearInput ></ion-input>
+      </ion-item>
+  
+    </ion-col> 
+    <ion-col size="12">
+        <ion-label>Additional Insurance Info</ion-label>
+        <ion-item>
+          <ion-input clearInput ></ion-input>
+        </ion-item>    
+      </ion-col> 
+</ion-row>
+
+    
+<div *ngIf="mode == 'view'">
+    <ion-card>
+      <ion-card-header>      
+        <ion-card-title>Insurance Information</ion-card-title>
+      </ion-card-header>  
+      <ion-card-content>
+       <ion-row>
+         <ion-col size="6">Additional_Insurance_Info:</ion-col>
+         <ion-col size="6">{{details?.insurance_info?.Additional_Insurance_Info}}</ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col size="6">Insurance:</ion-col>
+        <ion-col size="6">{{details?.insurance_info?.Insurance}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Primary_Card_Holder_Name:</ion-col>
+        <ion-col size="6">{{details?.insurance_info?.Primary_Card_Holder_Name}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Primary_Card_Holder_SSN:</ion-col>
+        <ion-col size="6">{{details?.insurance_info?.Primary_Card_Holder_SSN}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Primary_Group_ID:</ion-col>
+        <ion-col size="6">{{details?.insurance_info?.Primary_Group_ID}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Primary_Member_ID:</ion-col>
+        <ion-col size="6">{{details?.insurance_info?.Primary_Member_ID}}</ion-col>
+      </ion-row>
+      </ion-card-content>
+    </ion-card>
+          
+  </div>

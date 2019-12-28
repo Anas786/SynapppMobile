@@ -1,0 +1,152 @@
+<ion-row  class="ion-justify-content-center" *ngIf="mode == 'edit'">    
+    <h4>
+        Vital Signs
+      </h4>
+      <hr>
+      <ion-col size="12">
+        <ion-label>Temperature (℉)</ion-label>
+        <ion-item>
+            <ion-input clearInput placeholder="Fahrenheit"></ion-input>
+          </ion-item>
+    
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>Glucose</ion-label>
+        <ion-item>
+            <ion-input clearInput placeholder="mg/dl"></ion-input>
+          </ion-item>          
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>Blood Pressure</ion-label>
+        <ion-item>
+          <ion-input clearInput placeholder="BPM"></ion-input>
+        </ion-item>
+    
+      </ion-col> 
+      <ion-col size="12">
+          <ion-label>O2 Level</ion-label>
+          <ion-item>
+            <ion-input clearInput placeholder="%"></ion-input>
+          </ion-item>
+      
+        </ion-col> 
+        <ion-col size="12">
+            <ion-label>Comorbidity</ion-label>
+            <ion-list>
+                <ion-item>
+                  <ion-label>HTN</ion-label>
+                  <ion-checkbox color="primary"></ion-checkbox>
+                </ion-item>
+              
+                <ion-item>
+                  <ion-label>DM1</ion-label>
+                  <ion-checkbox color="primary"></ion-checkbox>
+                </ion-item>
+              
+                <ion-item>
+                  <ion-label>DM2</ion-label>
+                  <ion-checkbox color="primary"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                    <ion-label>COP</ion-label>
+                    <ion-checkbox color="primary"></ion-checkbox>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label>ESR</ion-label>
+                      <ion-checkbox color="primary"></ion-checkbox>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>CHF</ion-label>
+                        <ion-checkbox color="primary"></ion-checkbox>
+                      </ion-item>
+                      <ion-item>
+                          <ion-label>CAD</ion-label>
+                          <ion-checkbox color="primary"></ion-checkbox>
+                        </ion-item>
+              </ion-list>    
+          </ion-col> 
+          <ion-col size="12">
+              <ion-label>Allergies</ion-label>
+              <ion-list>
+                  <ion-item>
+                    <ion-label>PCN</ion-label>
+                    <ion-checkbox color="primary"></ion-checkbox>
+                  </ion-item>
+                
+                  <ion-item>
+                    <ion-label>Codein</ion-label>
+                    <ion-checkbox color="primary"></ion-checkbox>
+                  </ion-item>
+                
+                  <ion-item>
+                    <ion-label>Iodine</ion-label>
+                    <ion-checkbox color="primary"></ion-checkbox>
+                  </ion-item>                          
+                </ion-list>      
+            </ion-col>
+          <ion-col size="12">
+              <ion-label>Other Allergies</ion-label>
+              <ion-item>
+                  <ion-textarea placeholder="Enter more information here..."></ion-textarea>
+              </ion-item > 
+            </ion-col> 
+            <ion-col size="12">
+                <ion-label>Brief Pertinent Medical Information</ion-label>
+                <ion-item>
+                    <ion-textarea placeholder="Enter more information here..."></ion-textarea>
+                </ion-item > 
+              </ion-col> 
+    </ion-row>
+
+
+    
+<div *ngIf="mode == 'view'">
+    <ion-card>
+      <ion-card-header>      
+        <ion-card-title>Medical History</ion-card-title>
+      </ion-card-header>  
+      <ion-card-content>
+       <ion-row>
+         <ion-col size="6">Allergies:</ion-col>
+         <ion-col size="6">{{details?.medical_history?.Allergies}}</ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col size="6">Blood_Pressure_Diastolic:</ion-col>
+        <ion-col size="6">{{details?.medical_history?.Blood_Pressure_Diastolic}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Blood_Pressure_Systolic:</ion-col>
+        <ion-col size="6">{{details?.medical_history?.Blood_Pressure_Systolic}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Comorbidity:</ion-col>
+        <ion-col size="6">{{details?.medical_history?.Comorbidity}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Glucose:</ion-col>
+        <ion-col size="6">{{details?.medical_history?.Glucose}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">O2_Level:</ion-col>
+        <ion-col size="6">{{details?.medical_history?.O2_Level}}</ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col size="6">Other_Allergies:</ion-col>
+          <ion-col size="6">{{details?.medical_history?.Other_Allergies}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="6">Parient_Brief_Medical_Information:</ion-col>
+            <ion-col size="6">{{details?.medical_history?.Parient_Brief_Medical_Information}}</ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col size="6">Pulse:</ion-col>
+              <ion-col size="6">{{details?.medical_history?.Pulse}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="6">Temperature:</ion-col>
+                <ion-col size="6">{{details?.medical_history?.Temperature}}</ion-col>
+              </ion-row>
+      </ion-card-content>
+    </ion-card>
+      
+  </div>

@@ -1,0 +1,175 @@
+<ion-row class="ion-justify-content-center" *ngIf="mode == 'edit'">
+    <h4>
+        Diagnostic Orders
+    </h4>
+    <hr>
+    <ion-col size="12">
+      <ion-label>Blood Tests</ion-label>
+      <ion-item>          
+          <ion-input clearInput></ion-input>
+        </ion-item>
+  
+    </ion-col>
+    <ion-col size="12">
+        <ion-label>Urine Tests</ion-label>
+        <ion-list>
+          <ion-item>
+            <ion-label>UA</ion-label>
+            <ion-checkbox color="primary"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+              <ion-label>U&S</ion-label>
+              <ion-checkbox color="primary"></ion-checkbox>
+            </ion-item>
+        </ion-list>
+      </ion-col>
+    <ion-col size="12">
+      <ion-label>Imaging/Tests</ion-label>
+      <ion-list>
+          <ion-item>
+            <ion-label>X-Rays</ion-label>
+            <ion-checkbox color="primary"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+              <ion-label>US</ion-label>
+              <ion-checkbox color="primary"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <ion-label>CT</ion-label>
+                <ion-checkbox color="primary"></ion-checkbox>
+              </ion-item>
+              <ion-item>
+                  <ion-label>MRI</ion-label>
+                  <ion-checkbox color="primary"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                    <ion-label>EKG</ion-label>
+                    <ion-checkbox color="primary"></ion-checkbox>
+                  </ion-item>
+        </ion-list>
+    </ion-col>   
+    <ion-col size="12">
+      <ion-label>Other Tests</ion-label>
+      <ion-item>
+        <ion-input clearInput></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  
+<div *ngIf="mode == 'view'">
+    <ion-card>
+      <ion-card-header>      
+        <ion-card-title>Patient Information</ion-card-title>
+      </ion-card-header>  
+      <ion-card-content>
+       <ion-row>
+         <ion-col size="6">Patient Name:</ion-col>
+         <ion-col size="6">asd asd</ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col size="6">Age:</ion-col>
+        <ion-col size="6">10</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Gender:</ion-col>
+        <ion-col size="6">Male</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Social Security #:</ion-col>
+        <ion-col size="6">123123123</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Patient Email Address:</ion-col>
+        <ion-col size="6">user@gmail.com</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Patient Cell Number:</ion-col>
+        <ion-col size="6">(132) 132-1321</ion-col>
+      </ion-row>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-card>
+        <ion-card-header>      
+          <ion-card-title>Patient Status</ion-card-title>
+        </ion-card-header>  
+        <ion-card-content>
+         <ion-row>
+           <ion-col size="6">Mode of Tranportation:</ion-col>
+           <ion-col size="6">Ambulance</ion-col>
+         </ion-row>
+         <ion-row>
+          <ion-col size="6">Bed Type:</ion-col>
+          <ion-col size="6">Outpatient/ Observation 24H w/o Telemetry</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Code Status:</ion-col>
+          <ion-col size="6">Full Code</ion-col>
+        </ion-row>  
+        </ion-card-content>
+      </ion-card>
+  
+  
+      <ion-card>
+          <ion-card-header>      
+            <ion-card-title>Diagnostic Orders</ion-card-title>
+          </ion-card-header>  
+          <ion-card-content>
+           <ion-row>
+             <ion-col size="6">Blood_Tests:</ion-col>
+             <ion-col size="6"></ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col size="6">Imaging_Tests:</ion-col>
+            <ion-col size="6"></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">Urine_Tests:</ion-col>
+            <ion-col size="6"></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">Social Security #:</ion-col>
+            <ion-col size="6">123123123</ion-col>
+          </ion-row>    
+          </ion-card-content>
+        </ion-card>
+  
+  
+        <ion-card>
+            <ion-card-header>      
+              <ion-card-title>Patient Diagnostics</ion-card-title>
+            </ion-card-header>  
+            <ion-card-content>
+             <ion-row>
+               <ion-col size="6">A01.0 :</ion-col>
+               <ion-col size="6">Typhoid fever</ion-col>
+             </ion-row>           
+            </ion-card-content>
+          </ion-card>
+  
+  
+          <ion-card>
+              <ion-card-header>      
+                <ion-card-title>Admission Preferences</ion-card-title>
+              </ion-card-header>  
+              <ion-card-content>
+               <ion-row>
+                 <ion-col size="6">Admitting Hospital:</ion-col>
+                 <ion-col size="6">clinic</ion-col>
+               </ion-row>
+               <ion-row>
+                <ion-col size="6">Admitting Group:</ion-col>
+                <ion-col size="6">Corpus C. Hospitalist Grp</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6">Admitting Physician:</ion-col>
+                <ion-col size="6">Corpus Christi Hospitalist</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6">Patient ETA:</ion-col>
+                <ion-col size="6">1 Hour(s)</ion-col>
+              </ion-row>         
+              </ion-card-content>
+            </ion-card>
+  </div>

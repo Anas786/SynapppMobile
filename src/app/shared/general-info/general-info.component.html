@@ -1,0 +1,286 @@
+<form [formGroup]="user" *ngIf="mode == 'edit'">
+  <ion-row  class="ion-justify-content-center">
+    
+    <h4>
+      Patient Transfer Form
+    </h4>
+    <hr>
+    <ion-col size="12">
+      <ion-label>Patient Name</ion-label><span class="requriedStar">**</span>
+      <ion-item>
+        <ion-input clearInput placeholder="First Name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input clearInput placeholder="Last Name"></ion-input>
+      </ion-item>
+
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>Date of Birth</ion-label><span class="requriedStar">**</span>
+      <ion-item>
+          <ion-datetime placeholder="Select Date"></ion-datetime>
+      </ion-item>    
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>Social Security Number </ion-label>
+      <ion-item>
+        <ion-input clearInput placeholder="123-45-6789" formControlName="name" mask="000-00-0000"></ion-input>
+      </ion-item>
+
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>Gender</ion-label><span class="requriedStar">**</span>    
+        <ion-radio-group>                
+          <ion-item>
+              <ion-radio value="cord"></ion-radio>
+              <ion-icon name="man"></ion-icon>
+              <ion-label>
+                Male
+              </ion-label>
+          </ion-item>
+      
+          <ion-item>
+              <ion-radio value="duesenberg"></ion-radio>
+              <ion-icon name="woman"></ion-icon>
+              <ion-label>
+                Female
+              </ion-label>
+          
+          </ion-item>
+        </ion-radio-group>      
+
+    </ion-col>
+    <h4>
+      Patient Status
+    </h4>
+    <hr>
+    <ion-col size="12">
+      <ion-label>Patient Email Address</ion-label><span class="requriedStar">**</span>
+      <ion-item>
+        <ion-input clearInput placeholder="Username@domain.com"></ion-input>
+      </ion-item>
+
+    </ion-col>
+    <ion-col size="12">
+        <ion-label>Patient Cell Number</ion-label>
+        <ion-item>
+          <ion-input clearInput placeholder="eg: (000) 000-0000" formControlName="country" mask="(000) 000-0000"></ion-input>
+        </ion-item>
+  
+      </ion-col>
+    <ion-col size="12">
+      <ion-label>Code Status</ion-label><span class="requriedStar">**</span>
+      <ion-item>          
+          <ion-select value="brown" interface="action-sheet">
+            <ion-select-option value="brown">Brown</ion-select-option>
+            <ion-select-option value="blonde">Blonde</ion-select-option>
+            <ion-select-option value="black">Black</ion-select-option>
+            <ion-select-option value="red">Red</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>Bed Type</ion-label><span class="requriedStar">**</span>   
+          <ion-item>          
+              <ion-select value="brown" interface="action-sheet">
+                <ion-select-option value="brown">Brown</ion-select-option>
+                <ion-select-option value="blonde">Blonde</ion-select-option>
+                <ion-select-option value="black">Black</ion-select-option>
+                <ion-select-option value="red">Red</ion-select-option>
+              </ion-select>
+            </ion-item>      
+
+    </ion-col>
+    <h4>
+      Patient Diagnostics
+    </h4>
+    <hr>
+    <ion-col size="12">
+      <ion-label>Search By ICD-9 Diagnostic Code Or Name</ion-label>
+      <ion-item>
+        <ion-input clearInput placeholder="First Name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input clearInput placeholder="First Name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input clearInput placeholder="First Name"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>Other Diagnostics Info</ion-label>
+      <ion-item>
+        <ion-input clearInput></ion-input>
+      </ion-item>    
+    </ion-col>
+
+    <h4>
+      Admission Preferences
+    </h4>
+    <hr>
+    <ion-col size="12">
+      <ion-label>Preferred Admitting Hospital</ion-label><span class="requriedStar">**</span>
+      <ion-item>
+        <ion-input clearInput></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>Preferred Admitting Group</ion-label><span class="requriedStar">**</span>
+      <ion-item>
+        <ion-input clearInput placeholder="First Name"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>Preferred Admitting Physician</ion-label>     
+          <ion-item>          
+              <ion-select value="brown" interface="action-sheet" [disabled]="true">
+                <ion-select-option value="brown">Brown</ion-select-option>
+                <ion-select-option value="blonde">Blonde</ion-select-option>
+                <ion-select-option value="black">Black</ion-select-option>
+                <ion-select-option value="red">Red</ion-select-option>
+              </ion-select>
+            </ion-item>      
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>Doc to Doc</ion-label>
+      <ion-item>          
+          <ion-select value="brown" interface="action-sheet">
+            <ion-select-option value="brown">Brown</ion-select-option>
+            <ion-select-option value="blonde">Blonde</ion-select-option>
+            <ion-select-option value="black">Black</ion-select-option>
+            <ion-select-option value="red">Red</ion-select-option>
+          </ion-select>
+        </ion-item>  
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-label>Patient ETA *</ion-label>
+      <ion-item>          
+          <ion-select value="brown" interface="action-sheet">
+            <ion-select-option value="brown">Brown</ion-select-option>
+            <ion-select-option value="blonde">Blonde</ion-select-option>
+            <ion-select-option value="black">Black</ion-select-option>
+            <ion-select-option value="red">Red</ion-select-option>
+          </ion-select>
+        </ion-item>  
+    </ion-col>
+
+  </ion-row>
+</form>
+<div *ngIf="mode == 'view'">
+  <ion-card>
+    <ion-card-header>      
+      <ion-card-title>Patient Information</ion-card-title>
+    </ion-card-header>  
+    <ion-card-content>
+     <ion-row>
+       <ion-col size="6">Patient Name:</ion-col>
+       <ion-col size="6">{{details?.patient_first_name}}&nbsp; {{details?.patient_last_name}}</ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col size="6">Age:</ion-col>
+      <ion-col size="6">{{details?.patient_age_year}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Gender:</ion-col>
+      <ion-col size="6">{{details?.patient_gender}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Social Security #:</ion-col>
+      <ion-col size="6"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Patient Email Address:</ion-col>
+      <ion-col size="6"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Patient Cell Number:</ion-col>
+      <ion-col size="6">{{details?.patient_cell_number}}</ion-col>
+    </ion-row>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+      <ion-card-header>      
+        <ion-card-title>Patient Status</ion-card-title>
+      </ion-card-header>  
+      <ion-card-content>
+       <ion-row>
+         <ion-col size="6">Mode of Tranportation:</ion-col>
+         <ion-col size="6">{{details?.mode_of_tranportation?.name}}</ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col size="6">Bed Type:</ion-col>
+        <ion-col size="6">{{details?.bed_type?.name}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Code Status:</ion-col>
+        <ion-col size="6">{{details?.code_status?.name}}</ion-col>
+      </ion-row>  
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+        <ion-card-header>      
+          <ion-card-title>Diagnostic Orders</ion-card-title>
+        </ion-card-header>  
+        <ion-card-content>
+         <ion-row>
+           <ion-col size="6">Blood_Tests:</ion-col>
+           <ion-col size="6">{{details?.diagnostic_orders?.Blood_Tests}}</ion-col>
+         </ion-row>
+         <ion-row>
+          <ion-col size="6">Imaging_Tests:</ion-col>
+          <ion-col size="6">{{details?.diagnostic_orders?.Imaging_Tests}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Urine_Tests:</ion-col>
+          <ion-col size="6">{{details?.diagnostic_orders?.Urine_Tests}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">Social Security #:</ion-col>
+          <ion-col size="6">{{details?.patient_first_name}}</ion-col>
+        </ion-row>    
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card *ngIf="details != undefined">
+          <ion-card-header>      
+            <ion-card-title>Patient Diagnostics</ion-card-title>
+          </ion-card-header>  
+          <ion-card-content>
+           <ion-row *ngFor="let data of details.diagnosis">
+             <ion-col size="6">{{data?.diagnosis_code}}:</ion-col>
+             <ion-col size="6">{{data?.diagnosis_desc}}</ion-col>
+           </ion-row>           
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-card-header>      
+              <ion-card-title>Admission Preferences</ion-card-title>
+            </ion-card-header>  
+            <ion-card-content>
+             <ion-row>
+               <ion-col size="6">Admitting Hospital:</ion-col>
+               <ion-col size="6">{{details?.sent_by_facility?.name}}</ion-col>
+             </ion-row>
+             <ion-row>
+              <ion-col size="6">Admitting Group:</ion-col>
+              <ion-col size="6">{{details?.group?.name}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">Admitting Physician:</ion-col>
+              <ion-col size="6">{{details?.admitting_physician?.first_name}}&nbsp; {{details?.admitting_physician?.last_name}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">Patient ETA:</ion-col>
+              <ion-col size="6">{{details?.patient_eta}} Hour(s)</ion-col>
+            </ion-row>         
+            </ion-card-content>
+          </ion-card>
+</div>

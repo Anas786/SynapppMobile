@@ -1,0 +1,98 @@
+<ion-row class="ion-justify-content-center" *ngIf="mode == 'edit'">
+  <h4>
+    Specialty Consult
+  </h4>
+  <hr>
+  <ion-col size="12">
+    <ion-label>Consults</ion-label>
+    <ion-list>
+      <ion-item>
+        <ion-label>Cardiology</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Nephrology</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Neurology</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Neurosurgery</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>GI</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Surgery</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>ID</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Podiatry</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>ENT</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Orthopedics</ion-label>
+        <ion-checkbox color="primary"></ion-checkbox>
+      </ion-item>
+
+    </ion-list>
+  </ion-col>
+  <ion-col size="12">
+    <ion-label>Preferred Consultant</ion-label>
+    <ion-item>
+      <ion-input clearInput placeholder="Preferred Consultant"></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col size="12">
+    <ion-label>Additional Consults</ion-label>
+    <ion-item>
+      <ion-input clearInput placeholder="Additional Consults"></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col size="12">
+    <ion-item>
+      <ion-label> Specialist consult required for transfer </ion-label>
+      <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+  </ion-col>
+</ion-row>
+
+
+<div *ngIf="mode == 'view'">
+    <ion-card>
+      <ion-card-header>      
+        <ion-card-title>Specialty Consult</ion-card-title>
+      </ion-card-header>  
+      <ion-card-content>
+       <ion-row>
+         <ion-col size="6">Additional_Consults:</ion-col>
+         <ion-col size="6">{{details?.specialty_consult?.Additional_Consults}}</ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col size="6">Consults:</ion-col>
+        <ion-col size="6">{{details?.specialty_consult?.Consults}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Preferred_Consultant:</ion-col>
+        <ion-col size="6">{{details?.specialty_consult?.Preferred_Consultant}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">Specialist_Consult_required_for_transfer:</ion-col>
+        <ion-col size="6">{{details?.specialty_consult?.Specialist_Consult_required_for_transfer}}</ion-col>
+      </ion-row>
+      </ion-card-content>
+    </ion-card>   
+  </div>

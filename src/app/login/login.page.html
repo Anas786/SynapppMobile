@@ -1,0 +1,47 @@
+
+<ion-content>
+    <form [formGroup]="formBasic">
+  <ion-row class="ion-align-items-center sign-in-image">
+    <ion-col size="12">
+      <h1>Sign In
+        <hr>
+      </h1>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-img src="assets/images/logo.png"></ion-img>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item-divider>
+        <ion-icon name="person"></ion-icon>
+        <ion-input clearInput  formControlName="user_name" placeholder="Enter User Name"></ion-input>
+      </ion-item-divider>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item-divider>
+        <ion-icon name="key"></ion-icon>
+        <ion-input clearInput placeholder="Enter Password"  formControlName="password" type="password"></ion-input>
+      </ion-item-divider>
+    </ion-col>
+  </ion-row>
+  <ion-row style="text-align: center;">
+    <ion-col>
+      <ion-button color="danger" (click)="login()" [disabled]="!formBasic.valid" >
+        <ion-ripple-effect></ion-ripple-effect>Sign-In
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row style="text-align: center;">
+      <ion-col>
+        <ion-button color="warning" [routerLink]="['/forgot']">
+          <ion-ripple-effect></ion-ripple-effect>Forgot Password?
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>
