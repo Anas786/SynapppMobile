@@ -1,0 +1,7 @@
+{
+  "name": "SyncAppTics",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
